@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -13,7 +13,18 @@ import { Link } from "react-router-dom";
 import "./MenuBar.css";
 
 const MenuBar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+
+  // Handle scroll behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > window.innerHeight); // Set to true after scrolling past the HeroSection
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -24,7 +35,10 @@ const MenuBar = () => {
   };
 
   return (
-    <AppBar position="static" className="menu-bar">
+    <AppBar
+      position="fixed"
+      className={`menu-bar ${isScrolled ? "scrolled" : ""}`}
+    >
       <Toolbar className="toolbar">
         <Typography variant="h6" className="logo">
           CPA Landing

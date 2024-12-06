@@ -1,0 +1,21 @@
+.menu-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.menu-bar.scrolled {
+  background-color: #ffffff; /* Solid background when scrolled */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow when scrolled */
+}
+
+.menu-bar .MuiButton-root {
+  color: white; /* Default button color */
+}
+
+.menu-bar.scrolled .MuiButton-root {
+  color: black; /* Button color when scrolled */
+}

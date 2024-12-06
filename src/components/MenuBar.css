@@ -1,5 +1,12 @@
 .menu-bar {
-  background-color: #1e88e5; /* Adjust to your theme color */
+  transition: background-color 0.3s ease;
+  background-color: transparent; /* Default transparent background */
+  box-shadow: none; /* No shadow when transparent */
+}
+
+.menu-bar.scrolled {
+  background-color: #1e88e5; /* Solid background when scrolled */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow when solid */
 }
 
 .toolbar {
@@ -8,25 +15,21 @@
   align-items: center;
 }
 
-.logo {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
 .desktop-menu {
   display: flex;
-  gap: 1rem;
+  gap: 15px;
 }
 
 .mobile-menu {
   display: none;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
     display: none;
   }
   .mobile-menu {
-    display: flex;
+    display: block;
   }
 }
