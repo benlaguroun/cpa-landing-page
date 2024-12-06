@@ -1,0 +1,21 @@
+.features-section {
+  padding: 50px 20px;
+  background-color: #f4f6f8;
+  text-align: center;
+}
+
+.features-section h4 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.features-section .feature-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.features-section .feature-card:hover {
+  transform: scale(1.05);
+}

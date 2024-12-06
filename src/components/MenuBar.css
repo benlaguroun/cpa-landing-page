@@ -1,0 +1,32 @@
+.menu-bar {
+  background-color: #1e88e5; /* Adjust to your theme color */
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.desktop-menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+}
